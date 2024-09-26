@@ -23,11 +23,11 @@ public class EmployeeTimesheet {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String employeeId;
     private String employeeName;
     private LocalDate date;
-    private int hoursWorked;
+    private String hoursWorked;
     private String project;
     private String task;
     private String activity;

@@ -9,25 +9,21 @@ import com.employee.services.TimesheetPDFService;
 
 @SpringBootApplication
 public class EmployeeApplication implements CommandLineRunner {
-	
-	@Autowired
-	private TimesheetPDFService pdfService;
+    
+    @Autowired
+    private TimesheetPDFService pdfService;
 
-	public static void main(String[] args) {
-		SpringApplication.run(EmployeeApplication.class, args);
-		
-		 // Keep the application alive (this is just an example)
-        try {
-            Thread.sleep(Long.MAX_VALUE);  // Keeps running indefinitely
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-	}
-	 @Override
-	    public void run(String... args) throws Exception {
-	        String employeeId = "10267";
-	        String pdfPath = "monthly_timesheet_report.pdf";
-	        pdfService.generateMonthlyReport(employeeId, pdfPath);
-	    }
+    public static void main(String[] args) {
+        SpringApplication.run(EmployeeApplication.class, args);
+    }
+
+    public void run(String... args) throws Exception {
+        String employeeId = "2009373";
+        String employeeName = "Ashutosh";
+        int year = 2024;
+        int month = 9; // September
+        String pdfPath = "2009373_Ashutosh_Timesheet.pdf";
+        pdfService.generateMonthlyReport(employeeId, employeeName, year, month, pdfPath);
+    }
 
 }
